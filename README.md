@@ -1,24 +1,4 @@
-# README
+## Initial Thoughts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Once again we are at another rails project. There is much more to learn and this time
+it is with forms. Let's get to it!
