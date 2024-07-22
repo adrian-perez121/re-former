@@ -1,0 +1,67 @@
+<h1>Edit The User</h1>
+<!--<form action="/users" method="post" accept-charset="UTF-8">-->
+<!--  <input-->
+<!--    type="hidden"-->
+<!--    name="authenticity_token"-->
+<!--    value="<%#= form_authenticity_token %>"-->
+<!--  >-->
+<!--  <div><label for="username">Username:</label>-->
+<!--    <input type="text" id="username" name="user[username]">-->
+<!--  </div>-->
+<!--  <div><label for="user_email">Email:</label>-->
+<!--    <input type="email" id="user_email" name="user[email]">-->
+<!--  </div>-->
+<!--  <div><label for="user_password">Password</label>-->
+<!--    <input type="password" id="user_password" name="user[password]">-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <button type="submit">Submit</button>-->
+<!--  </div>-->
+<!--</form>-->
+
+<%#= form_tag('/users')%>
+
+<!--<div><%#= label_tag 'username' %>-->
+<%#= text_field_tag 'user[username]' %>
+<!--</div>-->
+
+<!--<div><%#= label_tag 'email' %>-->
+<%#= email_field_tag 'user[email]' %>
+<!--</div>-->
+
+<!--<div><%#= label_tag 'password' %>-->
+<%#= password_field_tag 'user[password]' %>
+<!--</div>-->
+
+<!--<div>-->
+<%#= submit_tag 'Submit' %>
+<!--</div>-->
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :username, 'Enter username here!!!' %>
+    <% @user.errors.full_messages_for(:username).each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
+    <%= form.text_field :username, placeholder: 'John Doe' %>
+  </div>
+
+  <div>
+    <%= form.label :email, "Now what's your email?" %>
+    <% @user.errors.full_messages_for(:email).each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
+    <%= form.email_field :email, placeholder: 'example@example.com' %>
+  </div>
+
+  <div>
+    <%= form.label :password, 'Password!?' %>
+    <% @user.errors.full_messages_for(:password).each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
+    <%= form.password_field :password%>
+  </div>
+
+  <%= form.submit %>
+<% end %>
